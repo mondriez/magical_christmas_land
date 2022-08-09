@@ -1,4 +1,5 @@
 import ShowMeData from './helpers';
+import DeckView from './components/DeckView';
 
 import logo from './logo.svg';
 import './App.css';
@@ -8,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Sup Dog</h1>
+        <DeckView></DeckView>
         <ShowMeData></ShowMeData>
       </header>
     </div>
