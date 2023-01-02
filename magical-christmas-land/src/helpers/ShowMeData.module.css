@@ -1,0 +1,20 @@
+.input {
+  background-color: #bbe5df;
+  height: 24px;
+  font-size: 14pt;
+  border-radius: 10px;
+  padding: 2px 8px;
+  margin-top: 20px;   
+}
+
+.button {
+  height: 34px;
+  background-color: rgb(59, 58, 58);
+  font-weight: 400;
+  font-family: fantasy;
+  font-size: 16px;
+  border-radius: 10px;
+  border-color: #b4bcbd;
+  color: white;
+  margin: 0 5px;
+}
