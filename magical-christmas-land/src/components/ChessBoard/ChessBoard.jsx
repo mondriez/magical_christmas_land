@@ -15,6 +15,9 @@ function renderSquare(i, knightPosition) {
       </BoardSquare>
     </div>
   )
+
+
+  
 }
 
 function renderPiece(x, y, [knightX, knightY]) {

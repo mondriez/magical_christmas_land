@@ -1,0 +1,7 @@
+.card-column {
+    background-color: green;
+    height: 100%;
+    width: 16%;
+    margin: 2px;
+    display: inline-block
+}
