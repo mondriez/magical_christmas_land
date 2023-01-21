@@ -6,6 +6,7 @@ const Card = (props) => {
 
 	const [{ isDragging }, drag, preview] = useDrag(() => ({
 		type: 'card',
+		item: {id: props.data.id},
 		collect: monitor => ({
 			isDragging: !!monitor.isDragging(),
 		}),
@@ -23,7 +24,7 @@ const Card = (props) => {
 		<>
 			{/* <DragPreviewImage connect={preview} src={FlappyStack} /> */}
 			<div ref={drag} className="card-stack-wrapper" style={style}>
-				<span>{props.name}</span>
+				<span>{props.data.name}</span>
 			</div>
 		</>
 		

@@ -8,7 +8,11 @@ const Column = (props) => {
 	const [{ isOver, canDrop }, drop] = useDrop(
     () => ({
       accept: 'card',
-      drop: (a, b, c) => console.log("Dropped bby, ", a, b, c),
+      drop: (item, monitor) => {
+        console.log('<Col> recieved drop target:', item, props.key)
+        props.acceptDrop(item, props.index)
+        return item
+      },
       collect: (monitor) => ({
         isOver: !!monitor.isOver(),
         canDrop: !!monitor.canDrop(),
