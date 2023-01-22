@@ -1,17 +1,15 @@
-import ShowMeData from './helpers';
+// import ShowMeData from './helpers';
 import DeckView from './components/DeckView';
-
-import logo from './logo.svg';
 import './App.css';
-import { queryHelpers } from '@testing-library/react';
 
-function App() {
+function App(props) {
+
   return (
     <div className="App">
       <header className="App-header">
-        <DeckView></DeckView>
-        <ShowMeData></ShowMeData>
+        Indomidable Creativity
       </header>
+      <DeckView />
     </div>
   );
 }
