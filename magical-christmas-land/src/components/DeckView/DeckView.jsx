@@ -8,7 +8,6 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 // TODO: Make this a custom hook
 const getScryfallData = (cardList) => {
 	const reqBody = cardList.map( inputName => ({ name : inputName }));
-	console.log('check that body out', reqBody)
 	return fetch('https://api.scryfall.com/cards/collection', {
 		method: 'POST', 
   	headers: {
