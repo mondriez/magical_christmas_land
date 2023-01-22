@@ -6,18 +6,21 @@ const Card = (props) => {
 
 	const [{ isDragging }, drag, preview] = useDrag(() => ({
 		type: 'card',
-		item: {id: props.data.id},
+		item: {id: props.data.id, srcCol: props.srcCol},
 		collect: monitor => ({
 			isDragging: !!monitor.isDragging(),
 		}),
 	}))
 
 	const style = {
-		width: '95%',
+		width: '80%',
 		aspectRatio: '196 / 273',
 		backgroundColor: 'blue',
 		opacity: isDragging ? 0.5 : 1,
-		margin: 'auto'
+		border: 'solid',
+		borderWidth: '7px',
+		borderRadius: '6px',
+		margin: '3px auto'
 	}
 
 	return (

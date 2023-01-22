@@ -9,7 +9,6 @@ const Column = (props) => {
     () => ({
       accept: 'card',
       drop: (item, monitor) => {
-        console.log('<Col> recieved drop target:', item, props.key)
         props.acceptDrop(item, props.index)
         return item
       },
