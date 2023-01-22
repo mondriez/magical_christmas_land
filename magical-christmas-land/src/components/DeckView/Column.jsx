@@ -59,6 +59,7 @@ const Column = (props) => {
 	return (
 		<div className="card-column" >
       <h1>{props.title}</h1>
+			<DropSlot key={`head_${props.index}`} slotIndex={-1} colIndex={props.index} acceptSplice={props.acceptSplice}/>
 			{props.children.map( (kid, ki) => {
         return (
           <DropSlot key={ki} slotIndex={ki} colIndex={props.index} acceptSplice={props.acceptSplice}>
