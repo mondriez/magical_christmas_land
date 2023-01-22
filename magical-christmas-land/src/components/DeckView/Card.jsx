@@ -1,12 +1,13 @@
 import React from "react";
 import { DragPreviewImage, useDrag } from 'react-dnd'
+import './Card.css'
 
 const Card = (props) => {
 	// Accept: Image SRC and number?
 
 	const [{ isDragging }, drag, preview] = useDrag(() => ({
 		type: 'card',
-		item: {id: props.data.id, srcCol: props.srcCol},
+		item: {id: props.data.id, srcCol: props.srcCol, srcSlot: props.srcSlot},
 		collect: monitor => ({
 			isDragging: !!monitor.isDragging(),
 		}),
@@ -23,12 +24,16 @@ const Card = (props) => {
 	}
 
 	const image = props.data.layout === 'normal' ?
-		props.data.image_uris.small :
-		props.data.card_faces[0].image_uris.small
+		props.data.image_uris.normal :
+		props.data.card_faces[0].image_uris.normal
+	
+	const previewImage = props.data.layout === 'normal' ?
+	props.data.image_uris.small :
+	props.data.card_faces[0].image_uris.small
 
 	return (
 		<>
-			<DragPreviewImage connect={preview} src={image} />
+			<DragPreviewImage connect={preview} src={previewImage} className='drag-preview'/>
 			<div ref={drag} className="card-stack-wrapper" style={wrapperStyle}>
 				{/* <span>{props.data.name}</span> */}
 				<img 

@@ -90,6 +90,16 @@ const DeckView = (props) => {
 		})
 	}
 
+	const spliceCardToPosition = ( card, pi, si) => {
+		// LESSON: Pass f() to state setting when prevState needed to determine new state! (setState is async!)
+		setMainDeck((prevState)=>{
+			const tempMain = JSON.parse(JSON.stringify(prevState));
+			const poppedCard = tempMain[card.srcCol].splice(card.srcSlot, 1);
+			tempMain[pi].splice(si + 1, 0, poppedCard[0]);
+			return tempMain
+		})
+	}
+
 	return (
 		<div className={styles['wrapper-tile']}>
 			<DndProvider backend={HTML5Backend}>
@@ -102,12 +112,14 @@ const DeckView = (props) => {
 								key={colIndex}
 								title={`${colIndex} CMC`}
 								index={colIndex}
-								acceptDrop={moveCardToPile}>
+								acceptDrop={moveCardToPile}
+								acceptSplice={spliceCardToPosition}>
 								{col.map((card, ci) => {
 									return (
 										<Card
 											key={card.id}
 											srcCol={colIndex}
+											srcSlot={ci}
 											data={card}/>
 									)
 								})}
