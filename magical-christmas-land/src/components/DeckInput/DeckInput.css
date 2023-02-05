@@ -1,0 +1,13 @@
+.import-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 90% 1fr;
+}
+
+#deck-import {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+#deck-import-submit {
+  grid-area: 2/2/3/3;
+}
